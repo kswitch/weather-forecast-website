@@ -1,9 +1,15 @@
-interface properties {
-    city: string,
-    handleInput: (e: string) => void
-}
+import fetchDataFromWeatherAPI from "../functions/fetchDataFromWeatherAPI";
+import cityinput from "../interfaces/typeDeclarations"
 
-function cityInput(props: properties ) {
+
+function cityInput(props: cityinput ) {
+
+    function handleEnter(e: {key: string}) : void {
+        if(e.key == 'Enter') {
+            fetchDataFromWeatherAPI(props.city || 'Lagos')
+        }
+    }
+
     return (
         <div className="city">
             <p className="city-text">Your city:</p>
@@ -11,7 +17,8 @@ function cityInput(props: properties ) {
                 type="text" 
                 className="city-input" 
                 value={props.city} 
-                onChange={(e) => props.handleInput(e.target.value)} 
+                onChange={(e) => props.handleInput(e.target.value)}
+                onKeyDown={(e) => handleEnter(e)}
                 placeholder="e.g Lagos"
             />
         </div>

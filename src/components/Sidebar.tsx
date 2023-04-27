@@ -1,20 +1,14 @@
-import {useState} from "react"
 import CityInput from "./CityInput"
 import DateAndTime from "./DateAndTime"
 import WeatherDetails from "./WeatherDetails"
+import cityinput from "../interfaces/typeDeclarations"
 
-function Sidebar() {
-    const [city, setCity] = useState('')
-
-    function handleInput(e: string) : void {
-        setCity(e)
-    }
-
+function Sidebar(props: cityinput) {
     return (
         <div className="sidebar">
             <CityInput
-                city={city}
-                handleInput={handleInput}
+                city={props.city}
+                handleInput={props.handleInput}
             />
             <DateAndTime />
             <WeatherDetails />
