@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,7 +11,9 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
+  color: black;
   background-color: #242424;
+  background-color: rgb(243,241,251);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,6 +21,38 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+#root {
+  padding: 2em;
+}
+
+.App {
+  background-color: white;
+  margin: 0 auto;
+  max-width: 70vw;
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+}
+
+#root, .App {
+  border-radius: 10px;
+}
+
+.sidebar {
+  width: 40%;
+  background-color: blue;
+}
+.main {
+  width: 60%;
+  background-color: green;
+}
+.city-text {
+  display: inline-block;
+}
+
+
+
 
 
 @media (prefers-color-scheme: light) {
