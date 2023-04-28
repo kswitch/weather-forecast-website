@@ -15,7 +15,6 @@ function Sidebar(props: weather) {
             <DateAndTime />
             <WeatherDetails
                 weatherData={props.weatherData}
-                // handleInput={props.handleInput} //This would not have any side effect when removed as Weather details doesn't need it
             />
         </div>
     )

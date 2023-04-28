@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid black; */
 }
 
 :root {
@@ -29,7 +30,7 @@
 .App {
   background-color: white;
   margin: 0 auto;
-  max-width: 70vw;
+  max-width: 60vw;
   /* width: 50vw; */
   /* height: 50vh; */
   display: flex;
@@ -45,7 +46,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2.5rem 1rem;
+  padding: 2.5rem 6%;
 }
 
 .main {
@@ -71,6 +72,37 @@
   font-size: 0.8rem;
 }
 
+.temp-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.weather-icon {
+  display: block;
+}
+
+.temperature {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.weather-main {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.humidity-and-wind-speed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.text {
+  color: rgb(115, 113, 113);
+  padding: 1rem 0;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
