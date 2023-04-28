@@ -14,7 +14,7 @@
   color: rgba(255, 255, 255, 0.87);
   color: black;
   background-color: #242424;
-  background-color: rgb(243,241,251);
+  background-color: rgb(176, 174, 182);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -98,10 +98,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  padding-top: 2rem;
 }
 .text {
   color: rgb(115, 113, 113);
-  padding: 1rem 0;
+  padding: 0.3rem 0;
 }
 
 @media (prefers-color-scheme: light) {
