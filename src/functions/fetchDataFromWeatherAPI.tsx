@@ -1,25 +1,26 @@
-async function fetchDataFromWeatherAPI(value: string) : Promise<object[] | undefined> {
+async function fetchDataFromWeatherAPI(value: string) : Promise<object[]> {
     
     const apiKey = `e13eae33440b5e72e386cdc8dfe97460`
     const current = `https://api.openweathermap.org/data/2.5/weather?q=${value}&units=metric&appid=${apiKey}`
     const forecast = `https://api.openweathermap.org/data/2.5/forecast?q=${value}&units=metric&appid=${apiKey}`
 
-        try {
-            const currentWeather = await fetch(current)
-            const weatherForecast = await fetch(forecast)
+    try {
+        const currentWeather = await fetch(current)
+        const weatherForecast = await fetch(forecast)
 
-            if(!currentWeather.ok || !weatherForecast.ok) {
-                throw Error(currentWeather.statusText) //This needs to be handled better in future.
-            }
-
-            const currentWeatherData = await currentWeather.json()
-            const weatherForecastData = await weatherForecast.json()
-
-            return [currentWeatherData, weatherForecastData]
+        if(!currentWeather.ok || !weatherForecast.ok) {
+            throw Error(currentWeather.statusText) //This needs to be handled better in future.
         }
-        catch(err) {
-            console.warn(err)
-        }
+
+        const currentWeatherData = await currentWeather.json()
+        const weatherForecastData = await weatherForecast.json()
+        
+        return [currentWeatherData, weatherForecastData]
+    }
+    catch(err) {
+        console.warn(err)
+    }
+    return []
 }
 
 export default fetchDataFromWeatherAPI

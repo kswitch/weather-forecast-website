@@ -1,18 +1,7 @@
-import fetchDataFromWeatherAPI from "../functions/fetchDataFromWeatherAPI";
-import {cityinput} from "../interfaces/typeDeclarations"
+// import fetchDataFromWeatherAPI from "../functions/fetchDataFromWeatherAPI";
+import { weather } from "../interfaces/typeDeclarations"
 
-
-function cityInput(props: cityinput ) {
-
-    function handleEnter(e: {key: string}) : void {
-        if(e.key == 'Enter') {
-            // () => {
-            //     const data = fetchDataFromWeatherAPI(props.city || 'Lagos')
-            //     console.log(data);
-            // }
-            fetchDataFromWeatherAPI(props.city || 'Lagos')
-        }
-    }
+function cityInput(props: weather ) {
 
     return (
         <div className="city">
@@ -22,7 +11,7 @@ function cityInput(props: cityinput ) {
                 className="city-input" 
                 value={props.city} 
                 onChange={(e) => props.handleInput(e.target.value)}
-                onKeyDown={(e) => handleEnter(e)}
+                onKeyDown={(e) => props.handleEnter(e)}
                 placeholder="e.g Lagos"
             />
         </div>
