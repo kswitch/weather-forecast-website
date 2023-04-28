@@ -1,7 +1,7 @@
 import CityInput from "./CityInput"
 import DateAndTime from "./DateAndTime"
 import WeatherDetails from "./WeatherDetails"
-import cityinput from "../interfaces/typeDeclarations"
+import {cityinput} from "../interfaces/typeDeclarations"
 
 function Sidebar(props: cityinput) {
     return (
@@ -11,7 +11,7 @@ function Sidebar(props: cityinput) {
                 handleInput={props.handleInput}
             />
             <DateAndTime />
-            <WeatherDetails />
+            <WeatherDetails/>
         </div>
     )
 }

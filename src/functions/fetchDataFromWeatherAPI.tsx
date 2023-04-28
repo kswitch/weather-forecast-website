@@ -15,8 +15,6 @@ async function fetchDataFromWeatherAPI(value: string) : Promise<object[] | undef
             const currentWeatherData = await currentWeather.json()
             const weatherForecastData = await weatherForecast.json()
 
-            // console.log([currentWeatherData, weatherForecastData]); //Remove this from code later
-
             return [currentWeatherData, weatherForecastData]
         }
         catch(err) {

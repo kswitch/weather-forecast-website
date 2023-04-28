@@ -1,5 +1,5 @@
 import fetchDataFromWeatherAPI from "../functions/fetchDataFromWeatherAPI";
-import cityinput from "../interfaces/typeDeclarations"
+import {cityinput} from "../interfaces/typeDeclarations"
 
 
 function cityInput(props: cityinput ) {

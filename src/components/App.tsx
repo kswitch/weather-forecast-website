@@ -11,15 +11,20 @@ function App() {
       setCity(value)
   }
 
-  useEffect(() => {    
-    fetchDataFromWeatherAPI(city || 'Lagos')
+  useEffect(() => {
+    (async () => {
+      const data = await fetchDataFromWeatherAPI(city || 'Lagos')
+      console.log(data)
+      // setWeatherData(data)
+      
+    })()
   }, [])
 
   return (
     <div className="App">
       <Sidebar
       city={city}
-      handleInput={handleInput} 
+      handleInput={handleInput}
       />
       <Main />
     </div>
