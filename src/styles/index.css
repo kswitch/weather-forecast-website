@@ -5,7 +5,7 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -29,9 +29,9 @@
 .App {
   background-color: white;
   margin: 0 auto;
-  max-width: 70vw;
-  width: 50vw;
-  height: 50vh;
+  max-width: 7s0vw;
+  /* width: 50vw; */
+  /* height: 50vh; */
   display: flex;
 }
 
@@ -41,18 +41,35 @@
 
 .sidebar {
   width: 40%;
-  background-color: blue;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 1rem;
 }
+
 .main {
   width: 60%;
   background-color: green;
 }
+
 .city-text {
   display: inline-block;
+  margin-right: 5px;
 }
 
+.city-input {
+  background-color: white;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  color: black;
+}
 
-
+.date-and-time {
+  color: rgb(115, 113, 113);
+  font-size: 0.8rem;
+}
 
 
 @media (prefers-color-scheme: light) {

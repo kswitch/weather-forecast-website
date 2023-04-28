@@ -7,8 +7,8 @@ import fetchDataFromWeatherAPI from '../functions/fetchDataFromWeatherAPI.tsx'
 function App() {
   const [city, setCity] = useState('')
 
-  function handleInput(e: string) : void {
-      setCity(e)
+  function handleInput(value: string) : void {
+      setCity(value)
   }
 
   useEffect(() => {    
