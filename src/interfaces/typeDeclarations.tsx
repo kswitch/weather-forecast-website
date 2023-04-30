@@ -16,4 +16,6 @@ export interface weather {
 export interface lineGraphObjects {
     list: object[]
     dt: number
+    main: object
+    temp: number
 }

@@ -1,18 +1,29 @@
 import { weather, lineGraphObjects } from "../interfaces/typeDeclarations"
+import getAverage from "../functions/getAverage";
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Legend, Tooltip} from 'chart.js'
 import { Line } from 'react-chartjs-2';
 
 function weatherLineGraph(props: weather) {   
-    const {weatherData} = props
+    const {weatherData} = props    
 
-    function getLabels() {
-        const values = weatherData[1].list.map((list:lineGraphObjects) => {
+    function getLabels<lineGraphObjects>() {
+        const values = weatherData[1].list.map<lineGraphObjects>((list:lineGraphObjects) => {
             const value = list.dt
             const day = new Date(value * 1000).toLocaleString('en-US', {weekday: 'short'})
             return day
         })
         const result = [...new Set(values)]
         return result 
+    }
+
+    function getAverageTemp() {
+        const values = weatherData[1].list.map<lineGraphObjects>((list:lineGraphObjects): object => {
+            const value = list.dt
+            const temp  = list.main.temp
+            const day = new Date(value * 1000).toLocaleString('en-US', {weekday: 'short'})
+            return {day,temp}
+        })
+        return getAverage(values)
     }
 
     Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
@@ -37,8 +48,8 @@ function weatherLineGraph(props: weather) {
         labels,
         datasets: [
           {
-            label: 'Temperature',
-            data: weatherData.length && labels.map((item,i)=> i),
+            label: 'Average Temp',
+            data: weatherData.length && getAverageTemp().map((item)=> Number(item)),
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
           }
@@ -48,7 +59,10 @@ function weatherLineGraph(props: weather) {
     return (
         <>
             { weatherData.length ?
+                <div>
                 <Line options={options} data={data} />
+                <p>The weather forecast for 4days will be here</p>
+                </div>
                 :
                 <>Loading...</>
             }
