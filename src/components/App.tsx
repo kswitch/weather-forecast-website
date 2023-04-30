@@ -31,12 +31,14 @@ function App() {
   return (
     <div className="App">
       <Sidebar
-      city={city}
-      handleInput={handleInput}
-      handleEnter={handleEnter}
-      weatherData={[...weatherData]}
+        city={city}
+        handleInput={handleInput}
+        handleEnter={handleEnter}
+        weatherData={[...weatherData]}
       />
-      <Main />
+      <Main 
+        weatherData={[...weatherData]}
+      />
     </div>
   )
 }

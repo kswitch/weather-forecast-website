@@ -1,9 +1,16 @@
-// import React from "react"
+import { weather } from "../interfaces/typeDeclarations";
+import WeatherLineGraph from "./weatherLineGraph";
 
-function Main() {
+
+function Main(props: weather) {
+    
     return (
         <div className="main">
-            <p>The weather chart will be deployed using Chart.JS</p>
+            <canvas id="weather-line-graph">
+            </canvas>
+            <WeatherLineGraph 
+                weatherData={props.weatherData}
+            />
             <p>The weather forecast for 4days will be here</p>
         </div>
     )

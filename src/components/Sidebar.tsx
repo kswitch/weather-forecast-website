@@ -1,9 +1,9 @@
 import CityInput from "./CityInput"
 import DateAndTime from "./DateAndTime"
 import WeatherDetails from "./WeatherDetails"
-import { weather } from "../interfaces/typeDeclarations";
+import { cityinput, weather} from "../interfaces/typeDeclarations";
 
-function Sidebar(props: weather) {   
+function Sidebar(props: cityinput & weather) {   
      
     return (
         <div className="sidebar">

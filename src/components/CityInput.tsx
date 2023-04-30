@@ -1,7 +1,6 @@
-// import fetchDataFromWeatherAPI from "../functions/fetchDataFromWeatherAPI";
-import { weather } from "../interfaces/typeDeclarations"
+import { cityinput } from "../interfaces/typeDeclarations"
 
-function cityInput(props: weather ) {
+function cityInput(props: cityinput) {
 
     return (
         <div className="city">
