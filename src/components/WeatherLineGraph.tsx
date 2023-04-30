@@ -1,12 +1,21 @@
-import { weather } from "../interfaces/typeDeclarations"
-import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Legend} from 'chart.js'
+import { weather, lineGraphObjects } from "../interfaces/typeDeclarations"
+import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Legend, Tooltip} from 'chart.js'
 import { Line } from 'react-chartjs-2';
 
 function weatherLineGraph(props: weather) {   
     const {weatherData} = props
-    console.log(weatherData);
 
-    Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Legend)
+    function getLabels() {
+        const values = weatherData[1].list.map((list:lineGraphObjects) => {
+            const value = list.dt
+            const day = new Date(value * 1000).toLocaleString('en-US', {weekday: 'short'})
+            return day
+        })
+        const result = [...new Set(values)]
+        return result 
+    }
+
+    Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
     const options = {
         responsive: true,
@@ -22,20 +31,14 @@ function weatherLineGraph(props: weather) {
         },
     };
 
-    const labels = weatherData.length && weatherData[1].list.map((list:weather) => {
-        const value = list.dt
-        const day = new Date(value * 1000).toLocaleString('en-US', {weekday: 'short'})
-        return day
-    })
+    const labels = weatherData.length && getLabels()
+
     const data = {
         labels,
         datasets: [
           {
             label: 'Temperature',
-            data: weatherData.length && weatherData[1].list.map((list:weather) => {
-                const value = list.main.temp
-                return value
-            }),
+            data: weatherData.length && labels.map((item,i)=> i),
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
           }

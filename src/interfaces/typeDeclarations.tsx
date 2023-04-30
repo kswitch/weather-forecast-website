@@ -11,6 +11,9 @@ export interface weather {
     dt_txt?: string
     dt?: number
     list?: object[]
-    main?: object
-    temp?: number
+}
+
+export interface lineGraphObjects {
+    list: object[]
+    dt: number
 }
