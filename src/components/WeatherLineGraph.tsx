@@ -4,10 +4,12 @@ import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Le
 import { Line } from 'react-chartjs-2';
 
 function weatherLineGraph(props: weather) {   
-    const {weatherData} = props    
+    const {weatherData} = props  
+    console.log(weatherData);
+      
 
-    function getLabels<lineGraphObjects>() {
-        const values = weatherData[1].list.map<lineGraphObjects>((list:lineGraphObjects) => {
+    function getLabels() {
+        const values = weatherData[1].list.map((list: lineGraphObjects) => {
             const value = list.dt
             const day = new Date(value * 1000).toLocaleString('en-US', {weekday: 'short'})
             return day
@@ -17,9 +19,9 @@ function weatherLineGraph(props: weather) {
     }
 
     function getAverageTemp() {
-        const values = weatherData[1].list.map<lineGraphObjects>((list:lineGraphObjects): object => {
+        const values = weatherData[1].list.map((list: lineGraphObjects) => {
             const value = list.dt
-            const temp  = list.main.temp
+            const temp = list.main.temp
             const day = new Date(value * 1000).toLocaleString('en-US', {weekday: 'short'})
             return {day,temp}
         })
@@ -37,7 +39,6 @@ function weatherLineGraph(props: weather) {
             title: {
                 display: true,
                 text: '5-day Forecast',
-                align: 'start'
             }
         },
     };

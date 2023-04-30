@@ -1,4 +1,6 @@
-function getAverage(arr: object[]): number[] {
+import { lineGraphObjects } from "../interfaces/typeDeclarations"
+
+function getAverage(arr: lineGraphObjects[]): number[] {
     const tempDegArr: number[] = []
     const degArr: number[][] = []
 

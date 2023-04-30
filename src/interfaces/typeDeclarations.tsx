@@ -7,7 +7,7 @@ export interface cityinput {
     handleEnter: (e: eventObjects) => void
 }
 export interface weather {
-    weatherData: object[]
+    weatherData: any
     dt_txt?: string
     dt?: number
     list?: object[]
@@ -16,6 +16,7 @@ export interface weather {
 export interface lineGraphObjects {
     list: object[]
     dt: number
-    main: object
+    main: any
     temp: number
+    day: string
 }

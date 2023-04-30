@@ -1,5 +1,5 @@
 import { weather } from "../interfaces/typeDeclarations";
-import WeatherLineGraph from "./weatherLineGraph";
+import WeatherLineGraph from "./WeatherLineGraph";
 
 
 function Main(props: weather) {
