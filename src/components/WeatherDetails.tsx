@@ -12,7 +12,7 @@ function weatherDetails({weatherData}: {weatherData: any}) {
                             <p className="location">{currentWeather.name}</p>
                             <div className="temp-main">
                                 <img src={`https://openweathermap.org/img/wn/${iconID}@2x.png`} className="weather-icon" alt="Weather Icon"/>
-                                <p className="temperature">{currentWeather.main.temp}<sup>&deg;C</sup></p>
+                                <p className="temperature">{currentWeather.main.temp} <span>&deg;C</span></p>
                             </div>
                             <div className="weather-main">
                                 {currentWeather.weather[0].main}
