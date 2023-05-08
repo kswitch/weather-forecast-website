@@ -1,3 +1,5 @@
+import Loading from "./loading/Loading"
+
 function weatherDetails({weatherData}: {weatherData: any}) {  
     const currentWeather = weatherData[0]
     const iconID = currentWeather && currentWeather.weather[0].icon    
@@ -32,9 +34,7 @@ function weatherDetails({weatherData}: {weatherData: any}) {
                 ) 
                 : 
                 (
-                    <>
-                        Loading...
-                    </>
+                    <Loading />
                 )
             }
             

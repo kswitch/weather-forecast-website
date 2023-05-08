@@ -2,9 +2,12 @@ import { weather, lineGraphObjects } from "../interfaces/typeDeclarations"
 import getAverage from "../functions/getAverage";
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Legend, Tooltip} from 'chart.js'
 import { Line } from 'react-chartjs-2';
+import Loading from "./loading/Loading";
 
 function weatherLineGraph(props: weather) {   
-    const {weatherData} = props        
+    const {weatherData} = props   
+    console.log(weatherData);
+         
 
     function getLabels() {
         const values = weatherData[1].list.map((list: lineGraphObjects) => {
@@ -64,7 +67,7 @@ function weatherLineGraph(props: weather) {
                 {/* <p>The weather forecast for 4days will be here</p> */}
                 </div>
                 :
-                <>Loading...</>
+                <Loading />
             }
         </>
     )
