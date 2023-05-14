@@ -62,10 +62,7 @@ function weatherLineGraph(props: weather) {
     return (
         <>
             { weatherData.length ?
-                <div>
-                    <Line options={options} data={data} />
-                {/* <p>The weather forecast for 4days will be here</p> */}
-                </div>
+                <Line options={options} data={data} />
                 :
                 <Loading />
             }
