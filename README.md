@@ -7,4 +7,4 @@ API used is =>> openweathermap.org
 
 - dist folder should be used as index folder for hosting project
 
-https://kswitch-quizzical-trivia-app.netlify.app
+https://kswitch-weather-forecast-website.netlify.app
