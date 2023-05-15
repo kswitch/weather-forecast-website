@@ -31,6 +31,8 @@ function weatherLineGraph(props: weather) {
 
     Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
+    const alignVal:any = 'start'
+
     const options = {
         responsive: true,
         plugins: {
@@ -40,7 +42,7 @@ function weatherLineGraph(props: weather) {
             title: {
                 display: true,
                 text: '5-day Forecast',
-                align: 'start'
+                align: alignVal
             }
         },
     };
